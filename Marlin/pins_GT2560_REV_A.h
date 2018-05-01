@@ -30,8 +30,11 @@
   #error "Oops!  Make sure you have 'Arduino Mega' selected from the 'Tools -> Boards' menu."
 #endif
 
-#define BOARD_NAME           "GT2560 Rev.A"
+#ifndef BOARD_NAME
+  #define BOARD_NAME "GT2560 Rev.A"
+#endif
 #define DEFAULT_MACHINE_NAME "Prusa i3 Pro B"
+
 //
 // Limit Switches
 //
@@ -87,7 +90,7 @@
 #define SDSS               53
 #define LED_PIN            13
 #define PS_ON_PIN          12
-#define SUICIDE_PIN        54  // Must be enabled at startup to keep power flowing
+#define SUICIDE_PIN        54   // Must be enabled at startup to keep power flowing
 #define KILL_PIN           -1
 
 #if ENABLED(ULTRA_LCD)
